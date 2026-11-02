@@ -13,7 +13,7 @@
                                                     ▼
                                           labean.service (127.0.0.1:8181)
                                                     │
-                                                    │ 讀取 X-Real-IP，執行 iptables
+                                                    │ 讀取 X-Real-IP，執行 iptables 或 systemctl start/stop
                                                     ▼
                                               iptables INPUT 鏈
                                                     │
