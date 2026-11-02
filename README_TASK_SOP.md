@@ -33,7 +33,7 @@ systemctl restart labean
 
 ## 步驟 2：修改 config.php
 
-在 workspace 版 `/home/tony/.hermes/workspace/knock/config.php` 中：
+在 /var/www/html/knock/config.php 中：
 
 1. 將新 task 名稱加入 `tasks` 陣列（下拉選單會自動顯示）
 2. 在 `task_timeouts` 中加入對應的 timeout 秒數（需與 labean.conf 一致）
@@ -52,20 +52,12 @@ systemctl restart labean
 
 ---
 
-## 步驟 3：同步到 apache 公開目錄
-
-將修改後的 `config.php` 與 `index.php` 複製到 `/var/www/html/knock/`：
-
-```bash
-cd /home/tony/.hermes/workspace/knock
-sudo cp -a index.php config.php /var/www/html/knock/
-```
 
 PHP 檔改動即時生效，**不需重載 apache**。
 
 ---
 
-## 步驟 4：驗證
+## 步驟 3：驗證
 
 1. 開啟瀏覽器前往 `https://your-site.com/knock/` 並登入
 2. 下拉選單應該出現新 task
@@ -86,7 +78,7 @@ PHP 檔改動即時生效，**不需重載 apache**。
 - 每次修改後建議備份：
   ```bash
   ts=$(date +%Y%m%d_%H%M%S)
-  cp -a /home/tony/.hermes/workspace/knock "/home/tony/.hermes/workspace/knock.bak.$ts"
+  cp -a /var/www/html/knock/ "/var/www/html/knock.bak.$ts"
   ```
 
 ---
