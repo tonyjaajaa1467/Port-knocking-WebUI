@@ -26,7 +26,7 @@
 |------|------------|------|
 | 前端 | apache2 (`labean-ssl.conf`, `*:443`) | 提供 `/knock` PHP 敲門頁，設定 `X-Real-IP` 為訪客真實 IP，`/secret/` 反代僅限 `127.0.0.1` |
 | 中介 | `labean.service` (`/etc/labean.conf`) | 監聽 `127.0.0.1:8181`，URL 前綴 `a70a39af561fde90`，收到 `/on`/`/off` 後執行 iptables 加入/刪除規則，支援超時自動關門 |
-| 執行 | iptables `INPUT` 或 systemctl start/stop 'service' | 對特定訪客 IP 放行 22 / 8787 / 442 等埠 或 systemctl start/stop 服務 |
+| 執行 | iptables `INPUT` 或 systemctl start/stop `service` | 對特定訪客 IP 放行 22 / 8787 / 442 等埠 或 systemctl start/stop 服務 |
 
 ---
 
